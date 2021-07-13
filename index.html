@@ -2,24 +2,26 @@
 <html>
     <head>
         <title>Embedded Video Player</title>
-        <style>
-            video {
-                width: 640px;
-                height: 360px;
-            }
-        </style>
+        <script src="dash.js-4.0.0\dist\dash.all.min.js"></script>
     </head>
     <body>
+      <div>
+        <video id="videoPlayer" controls></video>
+        <style>
+          video {
+              width: 640px;
+              height: 360px;
+          }
+        </style>
+
+        <script src='index.js'></script>
+
         <div>
-            <video id="videoPlayer" controls></video>
+          <Button onclick='seeker(-10)'>-10</Button>
+          <Button onclick='toggleVid()'>Switch Feed</Button>
+          <Button onclick='seeker(10)'>+10</Button>
         </div>
-        <script src="dash.js-4.0.0\dist\dash.all.min.js"></script>
-        <script>
-            (function(){
-                var url = "https://obb.rp.bt.com/test-content-4e02de5d/01_BroadcastMix/manifest.mpd";
-                var player = dashjs.MediaPlayer().create();
-                player.initialize(document.querySelector("#videoPlayer"), url, true);
-            })();
-        </script>
+
+      </div>
     </body>
 </html>
