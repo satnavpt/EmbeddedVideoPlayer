@@ -3,23 +3,21 @@
     <head>
         <title>Embedded Video Player</title>
         <script src="dash.js-4.0.0\dist\dash.all.min.js"></script>
+        <link rel="stylesheet" href="index.css">
     </head>
-    <body>
-      <div>
-        <video id="videoPlayer" controls></video>
-        <style>
-          video {
-              width: 640px;
-              height: 360px;
-          }
-        </style>
+    <body style="background-color: rgb(100, 100, 100);">
+      <div style="text-align: center; padding-left: 1%; padding-right: 1%; padding-top: 10%;">
+        <video id="videoPlayer3" style="width: 320px; height: 180px;" ></video>
+        <video id="videoPlayer" controls style="width: 768px; height: 432px;" ></video>
+        <video id="videoPlayer2" style="width: 320px; height: 180px;" ></video>
 
         <script src='index.js'></script>
 
-        <div>
+        <div style="padding-top: 2%;">
+          <Button id="conteButton" onclick='maxChelsea()'>Maximise Conte Cam</Button>
           <Button onclick='seeker(-10)'>-10</Button>
-          <Button onclick='toggleVid()'>Switch Feed</Button>
           <Button onclick='seeker(10)'>+10</Button>
+          <Button id="mourhinoButton" onclick='maxManUtd()'>Maximise Mourhino Cam</Button>
         </div>
 
       </div>
